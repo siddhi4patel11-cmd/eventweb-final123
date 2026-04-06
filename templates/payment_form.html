@@ -1,0 +1,73 @@
+<!-- payment_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+</head>
+<body>
+    <h1>Payment Form</h1>
+    <form id="payment-form" method="post">
+        {% csrf_token %}
+        <label for="amount">Booking Amount (INR):</label>
+        <input type="number" id="amount" name="amount" min="1" required>
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <!-- Include Razorpay SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        canvas.willReadFrequently = true;
+        // Get the CSRF token value
+        var csrfToken = document.querySelector('input[name="csrfmiddlewaretoken"]').value;
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var form = this;
+            var amount = form.elements['amount'].value;
+            
+            // Create an order using Razorpay API
+            fetch('/create_order/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken  // Include CSRF token
+                },
+                body: JSON.stringify({ amount: amount })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Redirect to Razorpay checkout page
+                var options = {
+                    key: 'rzp_test_WqaQNDhhEXwTZH', // Replace with your Razorpay Key ID
+                    amount: data.amount,
+                    currency: 'INR',
+                    order_id: data.id,
+                    name: 'Your Company Name',
+                    description: 'Booking Amount Payment',
+                    handler: function(response) {
+                        // Handle success callback (optional)
+                        console.log(response);
+                    },
+                    prefill: {
+                        name: 'User Name',
+                        email: 'user@example.com'
+                    },
+                    theme: {
+                        color: '#3399cc'
+                    }
+                };
+                var rzp = new Razorpay(options);
+                rzp.open();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>

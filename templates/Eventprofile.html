@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+    <script>
+        function validateForm() {
+            var numSeats = parseInt(document.getElementById('num_seats').value);
+            var remainingSeats = parseInt(document.getElementById('remaining_seats').value);
+
+            if (remainingSeats>=numSeats) {
+                return true;
+            }
+            else{
+                alert('Number of seats exceeds remaining seats.');
+                return false;
+            }              
+        }
+    </script>
+    <main>
+        
+    </main>
+    <div class="container-fluid mt-5 bg-light ">
+        <div class="row text-center">
+            <div class="col-md-12 col-sm-12  col-lg-12 ">
+                <div class="fs-2 fw-bold">"Explore Event Details & Book Now !"</div>
+               <div class="fs-6 mt-3">Explore your event details and secure your spot by checking the event information. Reserve your ticket today to join the experience.</div>
+               <div class="mt-2">──────────────────</div>
+            </div>
+        </div>
+    </div>
+    {% for i in event %}
+        <div class="container mt-5">
+            <div class="row border m-auto bg-light">
+                    <div class="col-md-5  mt-5 col-sm-12 col-lg-5 text-start m-auto ">
+                            <div class="fs-2  p-1 fw-bold mt-5">{{i.company_name}}</div>
+                            <div class="mt-2">────────────</div>
+                            <div class="mt-5 m-auto"><img src="{{i.image.url}}" class="rounded border border-dark" width="400PX" alt=""></div>
+                            <div class="fs-4  mt-3 fw-bold">{{i.main_title}}</div>
+                            <div class="fs-6 mt-1 fw-bold">{{i.caption}}</div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-start col-lg-6  mt-5">
+                        <div class="row">
+                            <div class="col-6"><div class="mt-5 fs-5">{{i.main_title}}</div><div class="mb-4">─────</div></div>
+                            <div class="col-6 mt-5 m-auto">
+                                <button class="button1">
+                                    <span class="button_lg1">
+                                        <span class="button_sl1"></span>
+
+
+                                        
+
+                                        <!-- <span class="button_text">Book Now</span> -->
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="border border-secondary p-3 ">
+                        <div class="fw-bold mb-3">{{i.date}}</div>
+                        <div class="row mb-4 ">
+                            <div class="fw-bold col-4">{{i.start_time}} to {{i.end_time}}</div> |
+                            <div class="col-6">4hr 30 mint</div>
+                        </div>
+                        <div class="mb-4"><div><span class="fw-bold">Rs.</span>{{i.price}}</div></div>
+                        <div class="row mb-4">
+                            
+                            <div><div class="mb"><span class="fw-bold">Total Seats : </span>{{i.total_seats}}</div>  
+                            
+                            <div class="mt-3"> <div class=""><span class="fw-bold">Booked seats : </span>{{total_booked_seats }} </div></div>
+                    
+                            <p class="mt-3"><strong>Remaining seats:</strong> <input type="hidden" id="remaining_seats" value="{{remaining_seats}}">    {{remaining_seats}}</p>
+                        </div>
+                        </div>
+                        <div class="mb-4"><span class="text-muted">{{i.Category}}</div>
+                        <div class="mb-2 row">
+                            <div class="col-12"><img src="{% static 'image/pin1.png' %}" width="18px" class="" alt="">&nbsp;{{i.location}}</div>
+                        </div>
+                        <!-- <div>
+                            
+                        </div> -->
+                        </div>
+                        <div class="mt-4">
+                            <div><span class="fw-bold">About </span><div>───────</div></div>
+                            <p class="event-about-desc">{{i.description}}
+                            <br>
+                        </div>
+                        <hr>
+                        <div class="mt-3 ">
+                            <div class="fw-bold">Provider Contact Details :</div>
+                            <div class="mt-2"><span class="fw-bold ">mail :</span><span>{{i.email}}</span></div>
+                            <div class="mt-2"><span class="fw-bold">phone :</span><span>+{{i.phone}}</span></div>
+
+                        </div>
+                    </div>
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12 fw-bold text-start">Terms and Conditions</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 mt-2 col-lg-12 col-md-12 text-start ">
+                           <div class="term-main">{{i.term_conditions}}</div>
+                        </div>
+                    </div>
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="mt-5">
+                                <button class="button1 my-5">
+                                    <!-- <span class="button_lg">
+                                        <span class="button_sl"></span>
+                                        <span class="button_text">Book Your Ticket Now</span>
+                                    </span> -->
+
+                                    <form method="post">
+                                            {% csrf_token %}
+                                            <label for="num_seats">Number of seats:</label>
+                                            <input type="number" id="num_seats" name="num_seats" min="1" value="1">
+                                    
+                                            {% if user.is_authenticated %}            
+                                                <button class="" type="submit" onclick="return validateForm();">Book Now</button>            
+                                            {% else %}
+                                                <p>Please <a href="{% url 'login' %}">Login</a> to add this event to your cart.</p>
+                                            {% endif %} 
+                                    
+                                            
+                                        </form> 
+
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        {% endfor %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+{% endblock body %}
+

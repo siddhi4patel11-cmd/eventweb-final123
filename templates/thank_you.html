@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+        <main>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-md-8 mx-auto my-5" style="min-height: 360px;">
+                        <h2>Thank You for Purchasing</h2>
+                        <p>You have successfully booked {{ num_seats }} seat(s) for "{{ event.title }}".</p>
+                        <p>Your total invoice amount is: Rs.{{ total_price }}</p>
+                        <form id="paymentForm" action="{% url 'payment' %}" method="post">
+                            {% csrf_token %}
+                            <input type="text" name="amount" readonly value="{{total_price}}">
+                            <button class="btn btn-success" type="submit">Pay Now</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#paymentForm').submit(function(event){
+                event.preventDefault();
+                var amount = parseInt($('input[name=amount]').val());
+                
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: {
+                        'amount': amount,
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(data){
+                        var options = {
+                            "key": "rzp_test_WqaQNDhhEXwTZH",
+                            "amount": '{{total_price}}',
+                            "currency": "INR",
+                            "name": "TCIT",
+                            "description": "Payment for your purchase",
+                            "order_id": data.id,
+                            "handler": function (response){
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/payment/complete/',
+                                    data: {
+                                        'razorpay_order_id': response.razorpay_order_id,
+                                        'razorpay_payment_id': response.razorpay_payment_id,
+                                        'razorpay_signature': response.razorpay_signature,
+                                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                                    },
+                                    success: function(){
+                                        window.location.href = '/success';
+                                    },
+                                    error: function(){
+                                        window.location.href = '/fail';
+                                    }
+                                });
+                            },
+                            "prefill": {
+                                "name": "",
+                                "email": "",
+                                "contact": ""
+                            },
+                            "notes": {
+                                "address": "Vastral"
+                            },
+                            "theme": {
+                                "color": "#3399cc"
+                            }
+                        };
+                        var rzp = new Razorpay(options);
+                        rzp.open();
+                    },
+                    error: function(){
+                        alert('Failed to initiate payment.');
+                    }
+                });
+            });
+        });
+    </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>
+</html>    
+{% endblock body %}
+
+

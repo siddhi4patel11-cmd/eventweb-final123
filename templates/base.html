@@ -1,0 +1,146 @@
+<!doctype html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <title></title>
+</head>
+<body>
+            <header>
+              <nav class="navbar navbar-expand-lg navbar-light" >
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="home">
+                    <img src="{% static 'image/num2.png'%}" width="230px"  alt="">
+                    <!-- <p class="logo">AttendifyEvents</p> --> 
+                  </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="material-symbols-outlined">
+                    
+                      </span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav m-auto mb-2 mb-lg-0 ">
+                      <li class="nav-item me-3">
+                        <a class="nav-link active" aria-current="page" href="/home">HOME</a>
+                      </li>
+                      <li class="nav-item  me-3">
+                        <a class="nav-link active" aria-current="page" href="/about">ABOUT US</a>
+                      </li>
+                     
+                      <li class="nav-item dropdown me-3">
+                        <a class="nav-link dropdown-toggle active" href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           EVENTS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="/maincategory">ALL</a></li>
+                          {% for i in category %}
+                          <li><a class="dropdown-item" href="/subcategory/{{i.id}}">{{i.name}}</a></li>
+                          {% endfor %}
+                        </ul>
+                      </li>
+                      <li class="nav-item  me-3">
+                        <a class="nav-link active" aria-current="page" href="/contact">CONTACT US</a>
+                      </li>
+                      {% if user.is_authenticated %}     
+                      <li class="nav-item  me-3">
+                        <a class="nav-link active" aria-current="page" href="/postevent">POST EVENT</a>
+                      </li>
+                      <li class="nav-item  me-3">
+                        <a class="nav-link active" aria-current="page" href="/user/events">MY EVENTS</a>
+                      </li>
+                      {% endif %} 
+                      {% comment %} <li class="nav-item  me-3">
+                        <a class="nav-link active" aria-current="page" href="">FAQ</a>
+                      </li> {% endcomment %}
+                    </ul>
+                  </div>
+                  <form class="d-flex m-auto me-1">
+                    <input class="form-control border" type="search" placeholder="Search" aria-label="Search">
+                    <!-- <button class="btn btn-outline-dark btn-sm" type="submit">Search</button> -->
+                    <div class="btn"><a href=""><img src="{% static 'image/search.png'%}" alt="" width="30px"></a></div>
+                  </form> 
+                    <ul class="m-auto d-flex">
+
+                      {% if user.is_authenticated %}            
+                      <li class="me-1 btn border m-auto" ><a class="nav-link " aria-current="page" href="/logout">Logout</a></li>    
+                      
+                      {% else %}
+                      <li class="me-1 btn border m-auto" ><a class="nav-link " aria-current="page" href="/login">login</a></li>    
+                      {% endif %} 
+
+                      
+                      
+                    </ul>
+                </div>
+              </nav>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+        
+          </header>
+          <hr>
+          
+{% block body %}
+
+{% endblock body %}
+
+
+ <footer class="text-center text-lg-start bg-body-tertiary">
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <div class="me-5 d-none d-lg-block">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <div>
+      <a href="" class="me-4 text-reset"><i class="fab fa-facebook-f"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-google"></i></a>
+      <a href="" class="me-4 text-reset"><i class="fab fa-instagram"></i></a>
+    </div>
+  </section>
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">
+            <i class="fas fa-gem me-3 " ></i>EventBliss</h6>
+            <p class="fs-3">Seamless Events, Smiling Faces - Your Vision, Our Mission"   </p>
+        </div>
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Events</h6>
+          <p><a href="#!" class="text-reset">conference</a></p>
+          <p><a href="#!" class="text-reset">Educational</a></p>
+          <p><a href="#!" class="text-reset">Festival</a></p>
+          <p><a href="#!" class="text-reset">Entertainment</a></p>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
+          <p><a href="home" class="text-reset">Home</a></p>
+          <p><a href="about" class="text-reset">About us</a></p>
+          <p><a href="event" class="text-reset">Events</a></p>
+          <p><a href="contact" class="text-reset">Contact</a></p>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+          <p><i class="fas fa-home me-3"></i> Gujarat, India</p>
+          <p><i class="fas fa-envelope me-3"></i>EventBliss@gmail.com</p>
+          <p><i class="fas fa-phone me-3"></i> + 91 0234 xxx xx</p>
+          <p><i class="fas fa-print me-3"></i> + 91 9234 xxx xx</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">EventBliss</a>
+    
+  </div>
+</footer>  

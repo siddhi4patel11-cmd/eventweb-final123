@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ajaxy/1.6.1/scripts/jquery.ajaxy.min.js">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}"> 
+    <title>AttendifyEvents | About</title>
+</head>
+<body>
+    <main>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active nav-contact-header text-white">
+              <div class="container mt-5">
+                <div class="row mt-5 main-title-sec p-5">
+                  <div class="main-title col-md-6 col-lg-6 col-sm-12 mt-5">CONTACT US</div>
+                  <div class="col-md-6 col-lg-6 col-sm-12 mt-5 container ">
+                    <div class="main-heading mt-5 ">EventBliss </div>
+                    <div class="main-title2 ">"Reach out to us."</div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="container"> 
+            <div class="row ">
+              <div class="text-center col-md-12 col-sm-12 col-lg-12">
+                <div class="aboutus ">Get in touch with us</div>
+                <div>‗‗‗‗‗‗‗‗‗‗‗‗</div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row mt-5">
+              <div class="col-md-6 col-sm-12 col-lg-6">
+                    <div class="contactus ">Send Message</div>
+                    <div>───────────</div>
+                    <div class="container mt-5">
+                      <form>
+                        <div class="mb-3">
+                          <label for="firstName" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="lastName" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+                        </div>
+                        <div class="mb-3">
+                          <label for="phone" class="form-label">Phone</label>
+                          <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                          <label for="email" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                          <label for="message" class="form-label">Message</label>
+                          <textarea class="form-control" id="message" rows="1" placeholder="Enter your message"></textarea>
+                        </div>
+                        <a href=""><button type="submit" class="btn btn-outline-dark rounded-0 ">Send Message</button></a>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12 col-lg-6">
+                    <div class="container">
+                      <div class="contactus">Call Us</div>
+                      <div>───────────</div>
+                      <div class="container mt-5">
+                        <div class="p-3">
+                          <h6><span class="p-1"><img src="{% static 'image/phone.png' %}" width="30px" alt=""></span>Phone</h6>
+                          <div>+ 91 0234 748 14</div>
+                          <div>+ 91 9234 365 48</div>
+                        </div>
+                        <div class="p-3">
+                          <h6><span class="p-1"><img src="{% static 'image/mail.png' %}" width="30px" alt=""></span>Email</h6>
+                          <div>EventBliss@gmail.com</div>
+                        </div>
+                        <div class="p-3">
+                          <h6><span class="p-1"><img src="{% static 'image/location.png' %}" width="30px" alt=""></span>Address</h6>
+                          <div>Gujarat, India</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-fluid">
+                <div class="row mt-5">
+                  <div class="col-md-12 col-sm-12 col-lg-12">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235014.29918893983!2d72.4149295551013!3d23.02015808394744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1705402560047!5m2!1sen!2sin" width="100%" height="480" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>
+</html>
+{% endblock body %}

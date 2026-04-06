@@ -1,0 +1,796 @@
+                   <!-- {% for i in sub_category %}
+                    <div class="mt-1">{{i.name}}</div>
+                   {% endfor %}  -->
+                   <div class="container">
+                    <div class="row p-5">
+                      {% for i in event %}
+                      <div class="col-md-6 col-sm-12 col-lg-6 mt-5">
+                        <div class="card" style="max-width: 600px;">
+                          <div class="row g-0">
+                            <div class="col-md-4 border border-3">
+                              <a href=""><img src="media/{{i.image}}" class="img-fluid rounded-start" width="100%" alt="..."></a>
+                            </div>
+                            <div class="col-md-8">
+                              <a href="">
+                              <div class="card-body">
+                                <h5 class="card-title event-title mb-3">{{i.main_title}}</h5>
+                                <div class="card-text"><small >₹ : {{i.price}}</small></div>
+                                <div class="card-text"><small><strong>Date :</strong> {{i.date}}</small></div>
+                                <div class="card-text"><small ><strong>Location :</strong>{{i.location}}</small></div>
+                                <div class="card-text"><small class="text-muted">{{i.Category}}</small></div>
+                                <p class="card-text">{{i.caption}}</p>
+                                <a href="eventprofile" class="bn13 btn border border-dark rounded-0">Book Now</a>
+                              </div>
+                            </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div> 
+
+
+                  <html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS3 hover image effects with bootstrap</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- css link-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	
+</head>
+<body>
+	<div class="image-wrapper">
+		<div class="container">
+			<div class="row">
+
+				<h1 class="text-center">CSS3 overlay hover effect with Bootstrap</h1>
+				<!-- no effect -->
+				<div class="simple-effect-image clearfix">
+					<h1 class="simple-effect">01. No effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+							<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 all-img">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+
+				<!-- simple overlay effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">02. Simple <span>Overlay</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay simple-overlay"></div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay simple-overlay-1"></div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay simple-overlay-2"></div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 all-img">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay simple-overlay-3"></div>
+						</div>
+					</div>
+				</div>
+
+				<!--overlay text effect 1 -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">03. Overlay <span>text</span> effect 1</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text">
+								<p>lorem ipsum text init lorem ipsum text init.lorem ipsum text init lorem ipsum text init.lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+									<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text overlay-text-1">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text overlay-text-2">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text overlay-text-2">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--overlay text effect 2 -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">04. Overlay <span>text</span> effect 2</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="simple-text">
+								<p>Web-designer</p>
+								<p>lorem text ipsum</p>
+							</div>
+							<div class="overlay-sim-text-2 overlay-xs-1">
+								<p>lorem ipsum text init lorem ipsum text init.lorem ipsum text init lorem ipsum text init.lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="simple-text">
+								<p>Web-designer</p>
+								<p>lorem text ipsum</p>
+							</div>
+							<div class="overlay-sim-text-2 overlay-xs-1">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="simple-text">
+								<p>Web-designer</p>
+								<p>lorem text ipsum</p>
+							</div>
+							<div class="overlay-sim-text-2 overlay-xs-1">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="simple-text">
+								<p>Web-designer</p>
+								<p>lorem text ipsum</p>
+							</div>
+							<div class="overlay-sim-text-2 overlay-xs-1">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--overlay text effect 3 -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">05. Overlay <span>text</span> effect 3</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text-effect-3">
+								<p>lorem ipsum text init lorem ipsum text init.lorem ipsum text init lorem ipsum text init.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text-effect-3 overlay-text-1">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text-effect-3 overlay-text-2">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+							<div class="overlay-text-effect-3 overlay-text-2">
+								<p>lorem ipsum text init lorem ipsum text init</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--overlay radious effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">06. Overlay <span>radius</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1 radious-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 radious-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 radious-effect radius-effct-next">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 radious-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+
+				<!--overlay zoom in effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">07. Overlay <span>zoom in</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-1">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+
+				<!--overlay zoom out effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">08. Overlay <span>zoom out</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-2">
+									<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-2">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-2">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 zoom-effect-2">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+
+				<!--overlay opacity effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">09. Overlay <span>opacity</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1 opacity-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 opacity-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 opacity-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 opacity-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+
+				<!--overlay blur effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">10. Overlay <span>blur</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1 blur-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 blur-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 blur-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 blur-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+
+				<!--overlay grayscale effect -->
+
+				<div class="simple-effet-image clearfix">
+					<h1 class="simple-effect">11. Overlay <span>grayscale</span> effect</h1>
+					<div class="col-sm-3">
+						<div class="effect-image-1 grayscale-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 grayscale-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 grayscale-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="effect-image-1 grayscale-effect">
+										<img src="https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?         w=1060&t=st=1710061216~exp=1710061816~hmac=47dc83d004ef916aed210b022716af3ea324446f6552f0b0a2a92da36d7a2cbf" alt="image-1">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- js link -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i');
+
+
+body{
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 26px;
+  overflow-x:hidden !important;
+}
+img{
+	width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.simple-effect {
+    padding: 1em .4em;
+    display: block;
+    font-size: 1.8em;
+}
+.simple-effect span {
+    color: #1e92ea;
+}
+
+
+/*-- global css --*/
+
+.overlay,
+.overlay-text,
+.simple-text,
+.overlay-sim-text-2,
+.overlay-text-effect-3,
+.zoom-effect-1 img,
+.zoom-effect-2 img,
+.opacity-effect img,
+.blur-effect img,
+.grayscale-effect img{
+   transition: all .4s linear;
+    -webkit-transition: all .4s linear;
+    -moz-transition: all .4s linear;
+    -o-transition: all .4s linear;
+}
+.image-wrapper{
+	margin-bottom: 35px;
+}
+.effect-image-1{
+	position: relative;
+	display: block;
+}
+.overlay-text p,
+.overlay-sim-text-2 p,
+.overlay-text-effect-3 p{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    padding: 20px 20px;
+}
+.overlay{
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	left:0;
+	top:0;
+	background: rgba(246,0,2,.7);
+	opacity: 0;
+	visibility: hidden;
+}
+
+/*-- simple overlay css --*/
+
+	.simple-overlay{
+		opacity: 0;
+		visibility: hidden;
+	}
+	.effect-image-1:hover .simple-overlay{
+		visibility: visible;
+		opacity: 1;
+	}
+
+	/*-- left to right overlay --*/
+
+	.simple-overlay-1{
+		width: 0px;
+		visibility: hidden;
+	}
+	.effect-image-1:hover .simple-overlay-1{
+		visibility: visible;
+		opacity: 1;
+		width: 100%;
+	}
+
+	/*-- right to left overlay --*/
+
+	.simple-overlay-2{
+		width: 0px;
+		right: 0;
+		left:initial;
+	}
+	.effect-image-1:hover .simple-overlay-2{
+		visibility: visible;
+		opacity: 1;
+		width: 100%;
+	}
+
+	/*-- right corner to left overlay --*/
+
+	.simple-overlay-3{
+		height: 0px;
+		right: 0;
+		left:initial;
+		width: 0px;
+	}
+	.effect-image-1:hover .simple-overlay-3{
+		visibility: visible;
+		opacity: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	/*-- ovarlay text effect-1 --*/
+
+	.overlay-text {
+	    position: absolute;
+	    left: 5px;
+	    top: 5px;
+	    width: 96%;
+	    height: 94%;
+	    background: rgba(246,0,2,.7);
+	}
+
+	.overlay-text-1{
+		opacity: 0;
+		visibility: hidden;
+	}
+	.effect-image-1:hover .overlay-text-1{
+		opacity: 1;
+		visibility: visible;
+	}
+	.overlay-text-2{
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(1.1);
+	}
+	.effect-image-1:hover .overlay-text-2{
+		opacity: 1;
+		visibility: visible;
+		transform: scale(1);
+	}
+
+	/*-- overlay text effect 2 --*/
+
+	.overlay-sim-text-2{
+		position: absolute;
+	    left: 0px;
+	    top: 0px;
+	    width: 100%;
+	    height: 100%;
+	    background: rgba(246,0,2,.7);
+	    opacity: 0;
+	}
+
+	.simple-text {
+    	position: absolute;
+	    bottom: 0px;
+	    left: 0px;
+	    width: 100%;
+	    background: #1e92ea;
+	    color: #fff;
+	}
+	.simple-text p{
+	    margin-bottom: 0px;
+	    padding: 2px 8px;
+	}
+
+	.effect-image-1:hover .overlay-xs-1{
+		opacity: 1;
+		visibility: visible;
+		display: block;	
+	}
+	.effect-image-1:hover .simple-text{
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	/*-- overlay text effect 3 --*/
+
+	.overlay-text-effect-3 {
+	    width: 85%;
+	    height: 80%;
+	    left: 20px;
+	    top: 20px;
+	    background: rgba(246,0,2,.7);
+	    position: absolute;
+	    outline: 5px solid rgba(246,0,2,.7);
+	    outline-offset: 3px;
+	}
+
+/*!-- ovarlay radious effect --*/
+	.radious-effect img{
+	    border-radius: 0%;
+	    width: 176px;
+	    height: 176px;
+	    margin: 0 auto;
+	    display: block;
+	    transition: all .3s ease;
+	    -webkit-transition: all .3s ease;
+	    -moz-transition: all .3s ease;
+	    -o-transition: all .3s ease;
+	}
+	.radious-effect:hover img{
+		border-radius: 100%;	
+	}
+	.radius-effct-next img{
+		border-radius: 100%;
+		transition: all .3s ease;
+	    -webkit-transition: all .3s ease;
+	    -moz-transition: all .3s ease;
+	    -o-transition: all .3s ease;
+	}
+	.radius-effct-next:hover img{
+		border-radius: 0%;
+	}
+	
+
+/*!-- ovarlay zoom in effect --*/
+
+	.zoom-effect-1{
+		overflow: hidden;
+	}
+
+	.zoom-effect-1 img{
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+
+	.zoom-effect-1:hover img{
+		transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+	}
+
+/*!-- ovarlay zoom out effect --*/
+
+	.zoom-effect-2{
+		overflow: hidden;
+	}
+
+	.zoom-effect-2 img{
+		transform: scale(1.1);
+		-webkit-transform: scale(1.1);
+	}
+
+	.zoom-effect-2:hover img{
+		transform: scale(1);
+		-webkit-transform: scale(1);
+	}
+
+/*--overlay opacity effect --*/
+
+	.opacity-effect img{
+		opacity: 1;
+		width: 100%;
+		overflow: hidden;
+	}
+	.opacity-effect:hover img{
+		opacity: .5;
+	}
+
+/*-- overlay blur effect --*/
+
+	.blur-effect img{
+		filter: blur(2px);
+		-webkit-fliter:blur(2px);
+	}
+	.blur-effect:hover img{
+		filter: blur(0);
+		-webkit-filter:blur(0);
+	}
+
+/*-- overlay grayscle effect --*/
+
+	.grayscale-effect img{
+		filter: grayscale(100%);
+		-webkit-filter: grayscale(100%);
+	}
+	.grayscale-effect:hover img{
+		filter: grayscale(0);
+		-webkit-filter: grayscale(0);
+	}
+
+
+@media (max-width: 767px){
+	.effect-image-1{
+		margin:30px 0px;
+	}
+}
+
+          <!-- <div class="container mt-5">
+                <div class="row"> 
+                  {% for i in category %} 
+                  <div class="col-md-6 col-sm-12 col-lg-6 ">
+                    <div class="mt-5">
+                            <div class="fs-1" id="corporate">{{i.name}}</div>
+                            <div class="mt-1">{{i.descitem}}</div>
+                            <div class=""><p>{{i.desc}}</p></div>
+                            <div class="">------</div>
+                      </div>
+                  {% endfor %}
+                  </div>
+                </div>
+              </div> -->
+
+                <!-- <div class="col-md-4">
+                  <div class="col mt-4 border">
+                    <div class="card" style="width: 23rem;">
+                      <img src="media/{{i.image}}" class="card-img-top"  alt="" />
+                      <div class="card-body">
+                        <h5 class="card-title">{{i.name}}</h5>
+                        <p class="card-text">
+                          {{i.descitem}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+
+
+
+				<!-- events ********************************************************** -->
+				<div class="container ">
+					<div class="row">
+						{% for i in event %}
+						<div class="col-md-6 col-sm-12 col-lg-6 mt-5 ">
+							<div class="card border border-secondary" style="max-width: 700px;">
+								<div class="row g-0 ">
+								  <div class="col-md-4">
+									<a href=""><img src="media/{{i.image}}" class="img-fluid rounded-start" width="100%" alt="..."></a>
+								  </div>
+								  <div class="col-md-8">
+									<a href="">
+									<div class="card-body">
+									  <h5 class="card-title event-title mb-3">{{i.main_title}}</h5>
+									  <div class="card-text p-1"><small >₹ : {{i.price}}</small></div>
+									  <div class="card-text p-1"><small><strong>Date :</strong> {{i.date}}</small></div>
+									  <div class="card-text p-1"><small ><strong>Location :</strong>{{i.location}}</small></div>
+									  <div class="card-text p-1"><small class="text-muted">{{i.Category}}</small></div>
+									  <p class="card-text p-1">{{i.caption}}</p>
+									  <div class="p-1 mt-3"><a href="eventprofile" class="bn13 btn border border-dark rounded-1">Book Now</a></div>
+									  
+									</div>
+								  </a>
+								  </div>
+								</div>
+							  </div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+		
+				<!-- **************************************** subcategory heading  -->
+				<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+					<div class="carousel-inner ">
+					<!-- {% for i in category %} -->
+					  <div class="carousel-item active nav-category-header ">
+					  <div class="container mt-5">
+						<div class="row mt-5 p-5 border">
+						  <div class="main-title col-md-6 col-lg-6 col-sm-12">{{i.name}}</div>
+						  <div class="col-md-6 col-lg-6 col-sm-12 container mt-4">
+							<div class="main-heading mt-3">AttendifyEvents</div>
+							<div class="text-end fs-6 fw-bold mt-5">{{i.desc}}</div>
+							<hr class="mt-5">
+						  </div>
+						</div>
+					  </div>
+					  </div>
+					<!-- {% endfor %} -->
+					</div>
+				</div>
+
+				<!-- heading sub category **************************** -->
+		{% for i in category %}
+      {% comment %} <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner ">
+          <div class="carousel-item active nav-category-header">
+          <div class="container">
+            <div class="row p-3 text-center ">
+              <div class="fs-2 fw-bold col-md-12 col-lg-12 col-sm-12 p-4 ">{{i.name}}</div>
+              <div class="text-end fs-6 fw-bold text-center">{{i.desc}}</div>
+                  <p class="col-md-12 col-sm-12 col-lg-12 text-center mt-1">────────────────</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div> {% endcomment %}
+      {% endfor %}
+        

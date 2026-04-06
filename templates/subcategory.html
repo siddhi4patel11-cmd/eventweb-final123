@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+      <main>
+       
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner ">
+            <div class="carousel-item active nav-category-header">
+            <div class="container">
+              <div class="row p-3 text-center ">
+                
+                <div class="fs-2 fw-bold col-md-12 col-lg-12 col-sm-12 p-4 ">    <h2>{{ category1.name }}</h2>
+                </div>
+                <div class="text-end fs-6 fw-bold text-center">{{category1.desc}}</div>
+                    <p class="col-md-12 col-sm-12 col-lg-12 text-center mt-1">────────────────</p>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div> 
+        <div class="container">
+          <div class="row">
+            {% for i in subcategories %}
+            <div class="col-md-3 col-sm-12 col-lg-3">
+              <div class="col">
+                <a href="{% url 'event_detail' i.id %}">
+                <div class="card h-100 mt-5 category-card">
+                  <img src="{{ i.image.url }}" class="card-img-top"
+                    alt="Palm Springs Road" />
+                  <div class="card-body">
+                    <h5 class="card-title">{{i.name}}</h5>
+                    <!-- <p class="card-text">This is a short card.</p> -->
+                  </div>
+                </div>
+              </a>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- {% for i in subcategories %}
+            <div class="col-md-4 mt-4">
+              <div class="card" style="width: 20rem;">
+                <a href="{% url 'event_detail' i.id %}">
+                <div class="card-body">
+                  <h5 class="card-title">{{i.name}}</h5>
+                  <img src="{{ i.image.url }}" width="200" height="200" class="card-img-top" alt="{{ category.name }}">
+                  <a href="#" class="btn btn-outline-dark btn-sm mt-5">view Events</a>
+                </div>
+                </a>
+              </div>
+            </div>
+            {% endfor %} -->
+          </div>
+        </div>
+        
+        
+        
+        
+      </main>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+   
+{% endblock body %}

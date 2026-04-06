@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+        <main>
+            <div class="container">
+                <div class="row my-5">
+                    <div class="col-md-8 mx-auto my-5" style="min-height: 360px;">
+                        <h1 class="mt-1">{{ event.main_title }}</h1>
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <img src="{{ event.image.url }}" width="150" />
+                                <h5 class="card-title">Description:</h5>
+                                <p class="card-text">{{ event.description }}</p>
+                                <p class="card-text">{{ event.date }}</p>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-body">
+                                <h5 class="card-title">Event Details:</h5>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Total seats available: {{ event.total_seats }}</li>
+                                    <li class="list-group-item">Total seats booked: {{ total_booked_seats }}</li>
+                                    <li class="list-group-item">Price per seat: Rs.{{ event.price }}</li>                                    
+                                    <li class="list-group-item">Revenue generated: Rs.{{ revenue_generated }}</li>
+                                    <!-- Add other event details as needed -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>
+</html>    
+{% endblock body %}
+
+

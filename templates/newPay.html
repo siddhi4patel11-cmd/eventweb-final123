@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+</head>
+<body>
+    <h1>Make Payment</h1>
+    <form id="paymentForm" action="{% url 'payment' %}" method="post">
+        {% csrf_token %}
+        <input type="number" name="amount" value="{{price}}"  placeholder="Enter Amount">
+        <button type="submit">Pay Now</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#paymentForm').submit(function(event){
+                event.preventDefault();
+                var amount = $('input[name=amount]').val();
+                $.ajax({
+                    type: 'POST',
+                    url: $(this).attr('action'),
+                    data: {
+                        'amount': amount,
+                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                    },
+                    success: function(data){
+                        var options = {
+                            "key": "rzp_test_WqaQNDhhEXwTZH",
+                            "amount": data.amount,
+                            "currency": "INR",
+                            "name": "TCIT",
+                            "description": "Payment for your purchase",
+                            "order_id": data.id,
+                            "handler": function (response){
+                                $.ajax({
+                                    type: 'POST',
+                                    url: '/payment/complete/',
+                                    data: {
+                                        'razorpay_order_id': response.razorpay_order_id,
+                                        'razorpay_payment_id': response.razorpay_payment_id,
+                                        'razorpay_signature': response.razorpay_signature,
+                                        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+                                    },
+                                    success: function(){
+                                        window.location.href = '/success';
+                                    },
+                                    error: function(){
+                                        window.location.href = '/fail';
+                                    }
+                                });
+                            },
+                            "prefill": {
+                                "name": "",
+                                "email": "",
+                                "contact": ""
+                            },
+                            "notes": {
+                                "address": "Vastral"
+                            },
+                            "theme": {
+                                "color": "#3399cc"
+                            }
+                        };
+                        var rzp = new Razorpay(options);
+                        rzp.open();
+                    },
+                    error: function(){
+                        alert('Failed to initiate payment.');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+ 
