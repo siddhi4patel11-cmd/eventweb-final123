@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--6$lg+9ce5@o$7+zvldb&1*6ke@wkt)u7o)*$a_1u4*-dd)&q5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -153,5 +153,9 @@ STATICFILES_DIRS = [
 
 from decouple import config
 
-RAZORPAY_KEY_ID = config('RAZORPAY_KEY_ID')
-RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET')
+# RAZORPAY_KEY_ID = config('RAZORPAY_KEY_ID')
+# RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET')
+
+RAZORPAY_KEY_ID = os.getenv("RAZORPAY_KEY_ID")
+RAZORPAY_KEY_SECRET = os.getenv("RAZORPAY_KEY_SECRET")
+
