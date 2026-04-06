@@ -299,7 +299,9 @@ from django.conf import settings
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 
-razorpay_client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+razorpay_client = razorpay.Client(
+    auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET)
+    )
 
 # def create_order(request):
 #     if request.method == 'POST':

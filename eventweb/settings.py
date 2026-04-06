@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure--6$lg+9ce5@o$7+zvldb&1*6ke@wkt)u7o)*$a_1u4*-dd)&q5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,7 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'eventweb.urls'
 
@@ -136,6 +139,11 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-RAZORPAY_KEY_ID = 'rzp_test_WqaQNDhhEXwTZH'
-RAZORPAY_KEY_SECRET = '347YVVXeFCbY4YthZOJFNW6k'
+# RAZORPAY_KEY_ID = 'rzp_test_WqaQNDhhEXwTZH'
+# RAZORPAY_KEY_SECRET = '347YVVXeFCbY4YthZOJFNW6k'
 
+
+from decouple import config
+
+RAZORPAY_KEY_ID = config('RAZORPAY_KEY_ID')
+RAZORPAY_KEY_SECRET = config('RAZORPAY_KEY_SECRET')
