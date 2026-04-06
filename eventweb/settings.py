@@ -136,8 +136,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # yourprojectname/settings.py
 import os
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 # RAZORPAY_KEY_ID = 'rzp_test_WqaQNDhhEXwTZH'
 # RAZORPAY_KEY_SECRET = '347YVVXeFCbY4YthZOJFNW6k'
